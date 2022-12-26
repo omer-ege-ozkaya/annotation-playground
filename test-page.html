@@ -1,0 +1,23 @@
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="./annotator-full.1.2.10/annotator-full.min.js"></script>
+<link rel="stylesheet" href="./annotator-full.1.2.10/annotator.min.css">
+
+<body>
+    <br />
+    <br />
+    <div id="content">
+        Hello world!
+    </div>
+</body>
+<script>
+    jQuery(function ($) {
+        $('#content').annotator()
+            .annotator('addPlugin', 'Store', { prefix: 'http://127.0.0.1:5000' })
+            //.annotator('setupPlugins', { tokenUrl: 'http://localhost/api/token'})
+            .annotator('addPlugin', 'Auth',  { tokenUrl: 'http://localhost/api/token'})
+            ;
+    });
+</script>
+
+</html>
